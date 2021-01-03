@@ -14,6 +14,7 @@ cv.imshow('Gray',gray)
 img_histogram = cv.equalizeHist(gray)
 cv.imshow('Histogram',img_histogram)
 cv.waitKey() 
+# How you re-map the distribution for the image
 
 # %%
 cv.destroyAllWindows()

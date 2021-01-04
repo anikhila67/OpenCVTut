@@ -72,4 +72,6 @@ OpenCV with Python course contents
     b. 
 
 9. Some Applications
-    a. 
+    a. Image Compression
+    b. Image Restoration
+    c. Image Segmentation

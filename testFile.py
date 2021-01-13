@@ -19,10 +19,12 @@ while(1):
 
     cv.imshow('Main', frame)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    edge = cv.Canny(gray, 50, 150)
+    cv.imshow('Canny', edge)
 
     # Median Blur
-    Mblur = cv.medianBlur(gray,5)
-    cv.imshow('Median Blur', Mblur)
+    # Mblur = cv.medianBlur(gray,5)
+    # cv.imshow('Median Blur', Mblur)
 
     # # Gaussian blur
     # Gblur = cv.GaussianBlur(gray,(5,5),0)

@@ -1,5 +1,5 @@
 # OpenCVTut
-This is a tutorial for the openCV. Follow the lectures.
+Started with very elementry concepts of image proceesing with OpenCV, this tutorial gives you a large amount of codes for the image processing. Follow the lectures.
 OpenCV with Python course contents
 
 0. OpenCV Installation

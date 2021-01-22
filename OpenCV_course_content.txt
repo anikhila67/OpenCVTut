@@ -22,6 +22,7 @@ OpenCV with Python course contents
     c. Gaussian Filter
     d. Biletral Filter
     e. Laplacian Blur
+    f. Masking
 
 3. contour Operations 
     a. Contour detection
@@ -39,7 +40,7 @@ OpenCV with Python course contents
     e. Canny transforms
     f. distanceTransform
 
-5. Thresholding
+5. Thresholding, Binary Segmentation
     a. Thresholding
     b. Adaptive Thresholding
     c. 

@@ -2,7 +2,11 @@
 import imutils
 import numpy as np
 import cv2
-
+# skimage can also be used for the image preocessing library inplace of the 
+# OpenCV. 
+# if you use skimage to load an image, it normalize the image itself within (0,1)
+# and uses float64 as the datatype.
+#  
 # Finding the number of contours in an image
 # crop the contour area
 frame = cv2.imread('Shapes.jpg')

@@ -1,4 +1,9 @@
 #%%  Asked in L&T interview for OpenCV opening
+# NLM is mostly used in Computer Tomography CT scanners.
+# NLM and Biletral filters preserves the edges of the image.
+# NLM takes the average of the similaer regions weights.
+# NLM replaces the value of the pixel by an average of selection 
+# of other pixels values.
 
 import cv2
 import matplotlib.pyplot as plt 

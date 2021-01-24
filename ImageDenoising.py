@@ -4,6 +4,18 @@
 # NLM takes the average of the similaer regions weights.
 # NLM replaces the value of the pixel by an average of selection 
 # of other pixels values.
+#
+# # OpenCV reads an image as in BGR channels whereas
+# # Matplotlib reads an image as RGB format.
+
+# these three methods of denoising preserves the edges are
+# Biletral Filters
+# NLM Filters
+# Total Variation Filters
+# denoising the image some more image filteration method
+# BM3D
+# 
+# 
 
 import cv2
 import matplotlib.pyplot as plt 

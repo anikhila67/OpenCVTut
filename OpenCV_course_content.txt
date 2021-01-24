@@ -23,6 +23,19 @@ OpenCV with Python course contents
     d. Biletral Filter
     e. Laplacian Blur
     f. Masking
+    g. Denoising preserving edges
+        a. Biletral Filters
+        b. NLM Filter
+        c. Total Variation Filters
+    h. BM3D Filters
+    i. Edge Detection Filters
+        a. Sobel (Fastest)
+        b. Roberts
+        c. Scharr
+        d. Prewitt
+        e. Farid
+    
+
 
 3. contour Operations 
     a. Contour detection

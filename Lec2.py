@@ -1,6 +1,7 @@
 #%%
 import cv2 as cv 
-
+# OpenCV reads an image as in BGR channels whereas
+# Matplotlib reads an image as RGB format.
 #  Camera read for default camera (0)
 cam = cv.VideoCapture(0)
 

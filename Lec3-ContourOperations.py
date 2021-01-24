@@ -6,7 +6,7 @@ import cv2
 # OpenCV. 
 # if you use skimage to load an image, it normalize the image itself within (0,1)
 # and uses float64 as the datatype.
-#  
+# 
 # Finding the number of contours in an image
 # crop the contour area
 frame = cv2.imread('Shapes.jpg')

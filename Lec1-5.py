@@ -1,4 +1,11 @@
 #%%
+# Edge Detection steps in the Image
+# 1. Noise Reduction (Default Gaussian)
+# 2. Gradient calculation (4 direction gradient(Horizontal, vertical, two diagonal(eg. Sobel)))
+# 3. Non-maximum suppression (find pixel with max value)
+# 4. Double threshold (to obtain strong, weak, irrelevant pixel)
+# 5. Edge tracking by hystersis 
+
 import cv2 as cv 
 
 #  Camera read for default camera (0)

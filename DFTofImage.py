@@ -3,13 +3,16 @@ import cv2
 import numpy as np 
 
 #%%  Importing the Image
+# img = cv2.imread("baboon.jpg")
 img = cv2.imread("baboon.jpg")
 b,g,r = cv2.split(img)
-cv2.imshow("Original Image", b)
+cv2.imshow("Original Image", img)
+cv2.imshow("Blue Channel Image", b)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# %%   Taking DFT
+# %%   High pass filter design of the image
 # In this tutorial we are we are designing a high pass filterfor the given image
 # Step 1 - Transform the image into Frequency domain.
 # Step 2 - Design a High pass mask for the image. a circuler mask with radius as the cut-off 
@@ -36,8 +39,10 @@ x,y = np.ogrid[:rows, :cols]
 mask_area = (x - center[0]) ** 2 + (y - center[1]) **2 <= r*r
 mask[mask_area] = 0
 cv2.imshow("Magnitude Spectrum", mag_spect)
+
 # Step 3
 fshift = dft_shift * mask
+
 # Step 4
 fshift_mask_mag = 20 * np.log(cv2.magnitude(fshift[:, :, 0], fshift[:, :, 1]))
 f_ishift = np.fft.ifftshift(fshift)
@@ -46,7 +51,6 @@ img_back = cv2.magnitude(img_back[:, :, 0], img_back[:, :, 1])
 
 # Step 5
 cv2.imshow("Filtered Blue channel", img_back)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 

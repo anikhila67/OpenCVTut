@@ -2,6 +2,8 @@
 Started with very elementry concepts of image proceesing with OpenCV, this tutorial gives you a large amount of codes for the image processing. Follow the lectures.
 OpenCV with Python course contents
 
+OpenCV with Python course contents
+
 0. OpenCV Installation
     a. Imshow() and plt.show()
 
@@ -24,6 +26,20 @@ OpenCV with Python course contents
     c. Gaussian Filter
     d. Biletral Filter
     e. Laplacian Blur
+    f. Masking
+    g. Denoising preserving edges
+        a. Biletral Filters
+        b. NLM Filter
+        c. Total Variation Filters
+    h. BM3D Filters
+    i. Edge Detection Filters
+        a. Sobel (Fastest)
+        b. Roberts
+        c. Scharr
+        d. Prewitt
+        e. Farid
+    
+
 
 3. contour Operations 
     a. Contour detection
@@ -41,9 +57,10 @@ OpenCV with Python course contents
     e. Canny transforms
     f. distanceTransform
 
-5. Thresholding
+5. Thresholding, Binary Segmentation
     a. Thresholding
     b. Adaptive Thresholding
+    c. 
 
 6. Curve designing
     a. Line draw
@@ -66,11 +83,13 @@ OpenCV with Python course contents
     a. Grab Cut 
     b. Harris corner
     c. Shi-Tomasi corner
+    d.
 
-9. Some important functions
-    a. cv2.magnitude() 
+8. Some important functions
+    a. cv2.magnitude()
+    b. 
 
-10. Some Applications
+9. Some Applications
     a. Image Compression
     b. Image Restoration
     c. Image Segmentation

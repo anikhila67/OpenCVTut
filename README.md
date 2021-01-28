@@ -1,4 +1,4 @@
-# OpenCVTut
+# Image Processing using OpenCV
 Started with very elementry concepts of image proceesing with OpenCV, this tutorial gives you a large amount of codes for the image processing. Follow the lectures.
 OpenCV with Python course contents
 

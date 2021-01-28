@@ -19,6 +19,7 @@ while(1):
 
     cv.imshow('Main', frame)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    
     edge = cv.Canny(gray, 50, 150)
     cv.imshow('Canny', edge)
 

@@ -7,7 +7,9 @@
 # 5. Edge tracking by hystersis 
 
 import cv2 as cv 
+import numpy as np 
 
+sig = 0.3
 #  Camera read for default camera (0)
 cam = cv.VideoCapture(0)
 while(1):
@@ -15,8 +17,15 @@ while(1):
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     cv.imshow('Gray', gray)
     # Gray Canny Edges
+    # two thresholds 100, 200
     Graycanny = cv.Canny(gray, 100, 200, L2gradient=150)
     cv.imshow('Gray Canny',Graycanny)
+    # auto canny
+    m = np.median(gray)
+    lower = int(max(0, (1.0 - sig) * m))
+    upper = int(min(255, (1.0 + sig) * m))
+    a_canny = cv.Canny(gray, lower, upper)
+    cv.imshow("Auto Canny", a_canny)
     # Gaussian Blur
     Gblur = cv.GaussianBlur(gray,(5,5),0)
     GCanny = cv.Canny(Gblur,100, 200)

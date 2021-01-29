@@ -8,8 +8,10 @@ OpenCV with Python course contents
     a. Imshow() and plt.show()
 
 1. Basic Operations
-    a. Image Read, Image Write, Image Store
-    b. Camera Read
+    a. Image Read, Image Write, Image Store,
+    
+    b. Camera Read,
+    
     c. Gray Scale conversion
     d. Histogram equilization
     e. Edge detection

@@ -136,16 +136,25 @@ OpenCV with Python course contents
     i. Mean shift
 
 8. Image Segmentation
+
     a. Grab Cut 
+    
     b. Harris corner
+    
     c. Shi-Tomasi corner
+    
     d.
 
 8. Some important functions
+    
     a. cv2.magnitude()
+    
     b. 
 
 9. Some Applications
+    
     a. Image Compression
+    
     b. Image Restoration
+    
     c. Image Segmentation

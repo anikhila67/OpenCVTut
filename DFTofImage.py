@@ -24,6 +24,7 @@ cv2.destroyAllWindows()
 
 # Step 1
 dft = cv2.dft(np.float32(b), flags=cv2.DFT_COMPLEX_OUTPUT)
+
 # shifting the DFT
 dft_shift = np.fft.fftshift(dft)
 mag_spect = 20 * np.log(cv2.magnitude(dft_shift[:, :, 0], dft_shift[:, :, 1]))
@@ -32,6 +33,7 @@ mag_spect = 20 * np.log(cv2.magnitude(dft_shift[:, :, 0], dft_shift[:, :, 1]))
 rows, cols = b.shape 
 cenrow, cencol = int(rows/2), int(cols/2)
 mask = np.ones((rows, cols, 2), np.uint8)
+
 # Radius of the mask.
 r = 60 
 center = [cenrow, cencol]

@@ -38,7 +38,7 @@ cv2.imshow("NLM of G Channel",dst)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# %% SMoooding the image
+#%% SMoooding the image
 # 2D confolutional smoothing
 ker = np.ones((5,5), np.float32)/25
 dst2 = cv2.filter2D(rgb, -1, ker)

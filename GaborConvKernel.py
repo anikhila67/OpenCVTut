@@ -1,10 +1,27 @@
 #%%
 import cv2 
+import numpy as np 
 import matplotlib.pyplot as plt 
+
+#%% 
+'''
+Here we first segment the image using Variance, then we use Gabor kernel.
+after then we user entropy for the segmentation.
+Though the Gabor is the best feature extraction kernel, but for single image it does not
+work fine because you have to find these parameters for a perticular features. so if we perform 
+this in ML Gabor is one of the best feature extraction kernel.
+Gabor is the function of a pixel, wavelengh, angle, phase, SD, gamma.
+So by varing these parameters we can detect different(infinite) features of the image.
+
+'''
+img = cv2.imread('textured1.png')
+cv2.imshow("Original Image", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
 #%%  Read the image and split the chennals
 
-img = cv2.imread('subpixel5.jpg')
-cv2.imshow('Image',img)
 b,g,r = cv2.split(img)
 cv2.imshow('Red Image', r)
 cv2.imshow('Green Image', g)
@@ -41,28 +58,26 @@ import numpy as np
 region1 = np.digitize(red_channel, bins=np.array([ret2]))
 plt.imshow(region1)
 
-# %%
-cv2.imshow("Red Channel", r)
-region_1 = (r >= 0) & (r < 90)
-region_2 = (r > 90) & (r < 150)
-region_3 = (r > 150) & (r < 200)
-region_4 = (r > 200) & (r <= 255)
+#%% Variance filter of the Image
+x,y = r.shape
+k = 7
+ker = np.ones((7,7))
 
-all_mask = np.zeros((r.shape[0], r.shape[1], 3))
-all_mask[region_1] = (1,0,0) # Blue
-all_mask[region_2] = (0,1,0) # Green
-all_mask[region_3] = (0,0,1) # Red
-all_mask[region_4] = (1,1,0) # Yellow
-cv2.imshow("Segmented Image", all_mask)
+np.filter2D()
+
+#%% Gabor kernel
+
+ksize = 45
+theta = np.pi/4
+kernel = cv2.getGaborKernel((ksize, ksize), 5.0, theta, 10.0, 0.9, 0, ktype=cv2.CV_32F)
+flt_img = cv2.filter2D(g, cv2.CV_8UC3, kernel)
+cv2.imshow("Gabor filtered", flt_img)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# %%
-from skimage.filters import threshold_multiotsu
-thresholds1 = threshold_multiotsu(r, classes=4)
-regs = np.digitize(r, bins=thresholds1)
-cv2.imshow("OTSU segmentation", regs)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+
+
 
 # %%

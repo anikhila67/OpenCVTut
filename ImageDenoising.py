@@ -22,6 +22,8 @@
 
 import cv2
 import matplotlib.pyplot as plt 
+import numpy as np 
+
 
 #  Image Read
 img = cv2.imread('Img_2.png')
@@ -41,7 +43,7 @@ cv2.destroyAllWindows()
 #%% SMoooding the image
 # 2D confolutional smoothing
 ker = np.ones((5,5), np.float32)/25
-dst2 = cv2.filter2D(rgb, -1, ker)
+dst2 = cv2.filter2D(G, -1, ker)
 plt.imshow(dst2)
 
 # %%

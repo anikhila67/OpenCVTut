@@ -16,7 +16,7 @@ So by varing these parameters we can detect different(infinite) features of the 
 '''
 img = cv2.imread('textured1.png')
 cv2.imshow("Original Image", img)
-cv2.waitKey(0)
+cv2.waitKey()
 cv2.destroyAllWindows()
 
 

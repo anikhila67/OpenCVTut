@@ -11,6 +11,7 @@ from skimage import io, measure
 s_img = cv2.imread('tissus.jpg', 0)
 s_img = cv2.resize(s_img, (780,540))
 cv2.imshow('Steel Surface', s_img)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
@@ -25,14 +26,15 @@ plt.hist(s_img.flat, bins=100, range=(0,255))
 
 # %% background and foreground thresholding subtractions
 
-bg = (s_img < 90)
-fg = (s_img > 90)
+bg = (s_img < 120)
+fg = (s_img > 120)
 plt.imshow(bg, cmap='gray')
 
 #%%  Median blurr the image to remove the small blobs.
 
 ret2, thersh2 = cv2.threshold(s_img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 cv2.imshow("Thresholding", thersh2)
+
 # g_gray = cv2.GaussianBlur(thersh2, (5,5), 0)
 m_gray = cv2.medianBlur(thersh2, 5)
 cv2.imshow("Median Gray", m_gray)
@@ -45,6 +47,8 @@ cv2.destroyAllWindows()
 #%% Assigning the labels to the similer blobs
 label_img = measure.label(edge_blob_remove, connectivity=s_img.ndim)
 plt.imshow(label_img, cmap='gray')
+
+
 #%%
 img_tool = label2rgb(label_img, image=m_gray)
 plt.imshow(img_tool)
@@ -75,7 +79,7 @@ params.maxThreshold = 255
 # Filter by Area.
 params.filterByArea = True
 params.minArea = 50
-params.maxArea = 50000
+params.maxArea = 5000
 
 # Filter by Color (black=0)
 params.filterByColor = False  #Set true for cast_iron as we'll be detecting black regions

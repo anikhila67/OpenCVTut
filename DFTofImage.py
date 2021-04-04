@@ -57,3 +57,12 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 # %%
+import pandas as pd 
+import datetime
+from datetime import date
+
+D = date.today().strftime("%d/%m/%Y")
+print(D)
+
+
+# %%
